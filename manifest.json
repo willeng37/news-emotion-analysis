@@ -11,6 +11,10 @@
   ],
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "Covid Button"
+    "default_title": "Covid Button",
+    "default_icon": {
+      "16": "covid.jpg",
+      "32": "covid.jpg"
+    }
   }
 }
