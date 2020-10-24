@@ -2,5 +2,15 @@
   "name": "Corona Corrector",
   "version": "1.0",
   "description": "To be added later.",
-  "manifest_version": 2
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Covid Button"
+  }
 }
