@@ -11,10 +11,6 @@
   ],
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "Emotional Content Check",
-    "default_icon": {
-      "16": "covid.jpg",
-      "32": "covid.jpg"
-    }
+    "default_title": "Emotional Content Check"
   }
 }
