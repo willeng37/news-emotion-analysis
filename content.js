@@ -61,5 +61,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         console.log(articleText);
 
         console.log("captured article text length: " + articleText.length);
+
+        sendResponse({articleText});
     }
 })
