@@ -38,30 +38,37 @@ document.addEventListener('DOMContentLoaded', function(){
             const urlReq = 'http://localhost:8080/processArticle/' + articleText;
             httpGetAsync(urlReq, function(urlResp) {
                 // handles the response from the url, process received response from server.
-                console.log("response is being handled");
+                let output = '';
+                if (urlResp != null && urlResp.charAt(urlResp.length - 1) != '.') {
+                    output = processOutput(urlResp);
+                }
+                
                 const div = document.createElement('div');
-                div.textContent = "server has been reached!";
+                div.textContent = output;
                 document.body.appendChild(div);
             })
         }
     }
 
     async function httpGetAsync(url, callback) {
+        // runs a ajax response to 
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("GET", url, true);
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                console.log("response is a-ok");
                 callback(xmlHttp.responseText);
             }
         }
         xmlHttp.send();
     }
 
-    function sanitizeText(text) {
-        // sanitize
-        text = text.replace('?', '\?');
+    function processOutput(text) {
+        // processes the output from server for user output
+        let splitValues = text.split('|');
+        const score = parseFloat(splitValues[0]).toFixed(5);
+        const magnitude = parseFloat(splitValues[1]).toFixed(5);
 
-        return text;
+        const output = "Results of this article - Score: " + score + " | Magnitude: " + magnitude;
+        return output;
     }
 }, false)
