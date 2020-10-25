@@ -1,17 +1,20 @@
 # corona-corrector
 
-Current working title. Need to come up with actual name.
+Project made during HackTX 2020. Repository title is current working title.
 
-This program runs based on a Node.js backend which connects to Google Cloud Platform 
-and takes advantage of the Google Cloud Natural Language API to process sentimental
-analysis of the news articles. This back-end server is currently not public.
+This is an extension written for Google Chrome that can evaluate articles for emotional connotation (sentiment) in order to help the user determine whether an article is emotionally charged or neutral in presentation.
 
-The extension extracts articles based on ideas of utilizing HTML tags and other
-items to extract article contents from websites, written by myself.
+WARNING: This program is highly experimental and will NOT work in all conditions.
+Use at your own risk.
 
-Future possibilities for this project:
+This program runs based on a Node.js backend which connects to Google Cloud Platform and takes advantage of the Google Cloud Natural Language API to process sentimental analysis of the news articles. This back-end server is currently not public.
 
-- Being able to publicize the software (and server) to analyze articles
-- More efficient/effective article parsing algorithm
-- Data transfer between server and extension can be improved
+The extension extracts articles based on ideas of utilizing HTML tags and other items to extract article contents from websites, written by myself.
+
+Future possibilities for this project (which may or may not ever happen):
+
+- Publication of the software (and server) for use to analyze articles
+- More efficient/effective article parsing algorithm (removal of bloat/non-article related items within the article)
+- Data transfer between server and extension can be improved (current implementation causes issues)
 - UI/Design could be improved
+- Implementation of custom ML model that has a stronger analysis of news article output (custom tuning for news articles), this could have likely been done using Google's AutoML Natural Language instead of their pre-trained model.
