@@ -18,3 +18,7 @@ Future possibilities for this project (which may or may not ever happen):
 - Data transfer between server and extension can be improved (current implementation causes issues)
 - UI/Design could be improved
 - Implementation of custom ML model that has a stronger analysis of news article output (custom tuning for news articles), this could have likely been done using Google's AutoML Natural Language instead of their pre-trained model.
+
+## Acknowledgements
+
+Special thanks to DanThy Nguyen for assisting and partnering up on this project, from project idea to assisting in development.
