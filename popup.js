@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', function(){
     function onclick(){
         chrome.tabs.query({currentWindow: true, active: true},
             function(tabs){
-                chrome.tabs.sendMessage(tabs[0].id,'Running Covid Counter', setCount)
+                chrome.tabs.sendMessage(tabs[0].id, {msg: 'runCovidCounter'}, setCount)
             })
     }
-    function setCount (res){
+    function setCount(res){
         const div = document.createElement('div')
-        div.textContent = `${res.count} Covid`
+        div.textContent = `${res.count} Covid mentions found`
         document.body.appendChild(div)
     }
 }, false)
