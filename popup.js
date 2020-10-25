@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     async function httpGetAsync(url, callback) {
-        // runs a ajax response to 
+        // runs a ajax response to server
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("GET", url, true);
         xmlHttp.onreadystatechange = function() {
