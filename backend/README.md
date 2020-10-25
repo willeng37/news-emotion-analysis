@@ -14,6 +14,8 @@ $env:GOOGLE_APPLICATION_CREDENTIALS:"[path]"
 
 where \[path\] is the path of the JSON-formatted key. Learn more [here.](https://cloud.google.com/natural-language/docs/reference/libraries)
 
+Make sure to `npm init` before running.
+
 To run the server, `cd` to folder of the server file and
 
 ```
