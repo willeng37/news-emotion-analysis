@@ -1,7 +1,7 @@
 {
   "name": "Corona Corrector",
   "version": "1.0",
-  "description": "To be added later.",
+  "description": "Emotional charges can be hard to spot. Let's change that.",
   "manifest_version": 2,
   "content_scripts": [
     {
@@ -11,7 +11,7 @@
   ],
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "Covid Button",
+    "default_title": "Emotional Content Check",
     "default_icon": {
       "16": "covid.jpg",
       "32": "covid.jpg"
