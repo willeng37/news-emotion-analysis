@@ -1,4 +1,4 @@
-# corona-corrector
+# news-emotion-analysis
 
 Project made during HackTX 2020. Repository title is current working title.
 

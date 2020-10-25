@@ -1,6 +1,6 @@
-# nodejs-corona-backend
+# nodejs-newsemote-backend
 
-Backend for corona-corrector Chrome extension. Running on a separate Node.js applet.
+Backend for news-emotion-analysis Chrome extension. Running on a separate Node.js applet.
 
 To run:
 
