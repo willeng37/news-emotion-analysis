@@ -42,10 +42,11 @@ document.addEventListener('DOMContentLoaded', function(){
                 if (urlResp != null && urlResp.charAt(urlResp.length - 1) != '.') {
                     output = processOutput(urlResp);
                 }
-                
+
                 const div = document.createElement('div');
                 div.textContent = output;
                 document.body.appendChild(div);
+                
             })
         }
     }
@@ -68,7 +69,57 @@ document.addEventListener('DOMContentLoaded', function(){
         const score = parseFloat(splitValues[0]).toFixed(5);
         const magnitude = parseFloat(splitValues[1]).toFixed(5);
 
-        const output = "Results of this article - Score: " + score + " | Magnitude: " + magnitude;
+        const div = document.createElement('div');
+        div.textContent = "Score: " + score + " | Magnitude: " + magnitude;
+        document.body.appendChild(div);
+
+        const output = calculateAndDisplayRating(score, magnitude);
+
+        // old output, for historical sake
+        //const output = "Results of this article - Score: " + score + " | Magnitude: " + magnitude;
         return output;
+    }
+
+    function calculateAndDisplayRating(score, magnitude) {
+        // Partially based off the documentation from Google Cloud NL API, and off of personal use case data
+        // generally, articles relating to political information hold a -.2 score with
+        // a varying degree of magnitude (confidence in score).
+        if (magnitude >= 6.0) {
+            // higher confidence
+            // start with lower scores, going up
+            if (score <= -0.5) {
+                return "This article holds a strong negative emotion.";
+            }
+            else if (score > -0.5 && score < -0.2) {
+                return "This article holds a lower negative emotion."
+            }
+            else if (score >= -0.2 && score <= .2) {
+                return "This article holds a more mixed emotional writing.";
+            }
+            else if (score > 0.2 && score < 0.5) {
+                return "This article holds a lower positive emotion."
+            }
+            else if (score >= 0.5) {
+                return "This article holds a strong positive emotion.";
+            }
+        }
+        else {
+            // lower magnitude/confidence in score
+            if (score <= -0.5) {
+                return "This article holds a strong negative emotion, but at lower confidence.";
+            }
+            else if (score > -0.5 && score < -0.2) {
+                return "This article holds a lower negative emotion, with lower confidence."
+            }
+            else if (score >= -0.2 && score <= .2) {
+                return "This article holds a more neutral ability.";
+            }
+            else if (score > 0.2 && score < 0.5) {
+                return "This article holds a lower positive emotion, with lower confidence."
+            }
+            else if (score >= 0.5) {
+                return "This article holds a stronger positive emotion, but at lower confidence.";
+            }
+        }
     }
 }, false)
